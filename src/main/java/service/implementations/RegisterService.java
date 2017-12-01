@@ -3,20 +3,24 @@ package service.implementations;
 import dao.interfaces.IUserDAO;
 import model.interfaces.IAccessToken;
 import model.interfaces.IUser;
+import org.apache.commons.codec.digest.DigestUtils;
 import service.interfaces.ILoginService;
 import service.interfaces.IRegisterService;
+
+import java.util.UUID;
 
 public class RegisterService implements IRegisterService {
     IUserDAO userDAO;
     ILoginService loginService;
 
-    public IAccessToken register(IUser user) {
-        IAccessToken token = null;
+    public IUser register(IUser user) {
         if(userDAO.getByUsername(user.getUserName()) == null) {
+            user.setPassword(DigestUtils.md5Hex(user.getPassword()));
             userDAO.add(user);
-            token = loginService.login(user.getUserName(), user.getPassword());
+        } else {
+            user = null;
         }
-        return token;
+        return user;
     }
 
     public void setUserDAO(IUserDAO userDAO) {

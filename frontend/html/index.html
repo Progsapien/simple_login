@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="../libs/bootstrap4/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="navbar-brand">Simple Login</div>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_menu">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbar_menu">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+			<a href="#" class="nav-link" data-toggle="modal" data-target="#register_modal" id="lnk_register">Register</a>
+			</li>
+			<li class="nav-item">
+			<a href="#" class="nav-link" data-toggle="modal" data-target="#login_modal" id="lnk_login">Log in</a>
+			</li>
+		</ul>
+		<div class="my-2 my-lg-0">
+			<div style="color: white" id="username_logged">You are not logged in</div>
+		</div>
+	</div>
+</nav>
+
+
+<!-- Log in modal dialog -->
+<div class="modal fade" id="login_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="login_modal_title">Log in<h5>	
+				<button class="close" data-dismiss="modal" aria-label="close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<input type="text" class="form-control" id="login_username" placeholder="Username" />
+				<small id="username_small" class="form-text text-muted">The username must be at least 5 characters</small>
+				<br>
+				<input type="password" class="form-control" id="login_password" placeholder="Password" />
+				<small id="password_small" class="form-text text-muted">The password must be at least 6 characters</small>
+			</div>
+			<div class="modal-footer">
+				<p class="mr-auto my-auto text-danger" id="label_incorrect_data">Incorrect username or password</p>
+				<button type="button" id="btn_login" data-loading-text="<i class='fa fa-spinner fa-spin '></i>Processing Order" class="btn btn-outline-primary">Log in</button>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Register modal dialog -->
+<div class="modal fade" id="register_modal" tabindex="-1" role="dialog" aria-labelledby="login_modal" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="register_modal_title">Register</h5>
+				<button class="close" data-dismiss="modal" arial-label="close">
+					<span aria-hidden="true">&times;</span>
+				</button>		
+			</div>
+			<div class="modal-body">
+				<input type="text" class="form-control" id="register_username" placeholder="Username" />
+				<small id="username_small_register">Username ...</small>
+				<br>
+				<input type="text" class="form-control" id="register_firstname" placeholder="Fistname" />
+				<small id="firstname_small_register">Fistname ...</small>
+				<br>
+				<input type="text" class="form-control" id="register_lastname" placeholder="Lastname" />
+				<small id="lastname_small_register">Lastrname ...</small>
+				<br>
+				<input type="email" class="form-control" id="register_email" placeholder="Email" />
+				<small id="email_small_register">Email ...</small>
+				<br>
+				<input type="password" class="form-control" id="register_password" placeholder="Password" />
+				<small id="password_small_register">Password ...</small>
+			</div>
+			<div class="modal-footer">
+				<p class="mr-auto my-auto text-danger" id="label_username_incorrect">A user with this username already exists</p>
+				<p class="mr-auto my-auto text-success" id="label_username_success">The user successfully registered</p>
+				<button id="btn_register" class="btn btn-outline-success">Register</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="../libs/jquery/jquery-3.2.1.min.js"></script>
+<script src="../libs/popper/popper.min.js"></script>
+<script src="../libs/bootstrap4/js/bootstrap.min.js"></script>
+<script src="../js/login.js"></script>
+<script src="../js/register.js"></script>
+</body>
+</html>

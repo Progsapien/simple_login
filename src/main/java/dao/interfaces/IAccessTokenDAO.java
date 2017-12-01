@@ -10,5 +10,6 @@ public interface IAccessTokenDAO {
     void remove(IAccessToken IAccessToken);
     List<IAccessToken> getAll();
     IAccessToken getTokenByUserId(int id);
+    IAccessToken getToken(String token);
     boolean contains(IAccessToken accessToken);
 }

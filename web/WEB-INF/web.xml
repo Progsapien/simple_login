@@ -6,15 +6,14 @@
     <display-name>Test</display-name>
 
     <servlet>
-        <servlet-name>RestController</servlet-name>
+        <servlet-name>UserRestController</servlet-name>
         <servlet-class>web.UserRestServiceController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>RestController</servlet-name>
-        <url-pattern>/user/add</url-pattern>
+        <servlet-name>UserRestController</servlet-name>
         <url-pattern>/user/login</url-pattern>
         <url-pattern>/user/register</url-pattern>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/user/*</url-pattern>
     </servlet-mapping>
 
 </web-app>

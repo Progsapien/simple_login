@@ -41,6 +41,12 @@ public class AccessTokenDAO implements IAccessTokenDAO {
         return (IAccessToken) criteria.uniqueResult();
     }
 
+    public IAccessToken getToken(String token) {
+        Criteria criteria = session.createCriteria(AccessToken.class);
+        criteria.add(Restrictions.eq("accessToken", token));
+        return (IAccessToken) criteria.uniqueResult();
+    }
+
     public boolean contains(IAccessToken accessToken) {
         Criteria criteria = session.createCriteria(AccessToken.class);
         criteria.add(Restrictions.eq("accessToken", accessToken.getAccessToken()));

@@ -10,4 +10,5 @@ public interface IUserDAO {
     void remove(IUser IUser);
     List<IUser> getAll();
     IUser getByUsername(String username);
+    IUser getById(int id);
 }

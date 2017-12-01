@@ -41,6 +41,12 @@ public class UserDAO implements IUserDAO {
         return (IUser) criteria.uniqueResult();
     }
 
+    public IUser getById(int id) {
+        Criteria criteria = session.createCriteria(User.class);
+        criteria.add(Restrictions.eq("id", id));
+        return (IUser) criteria.uniqueResult();
+    }
+
     public void setSession(Session session) {
         this.session = session;
     }
